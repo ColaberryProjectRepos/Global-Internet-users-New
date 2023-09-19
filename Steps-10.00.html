@@ -1,0 +1,31 @@
+
+Adding a 'Date' Column
+10
+<div style="margin: 0px; font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 18px;"><strong style="">Step 3: Creating the Calendar table :</strong></div><ol style="list-style-position: initial; list-style-image: initial; padding: 0px; margin: 0.65em 0px 0.9em; font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 18px;"><li style="margin: 0.3em 0px 0px 2em;">In power bi on the ribbon we have Modeling Click on it then click on the new table button to create the new table.</li><li style="margin: 0.3em 0px 0px 2em;">In the Dax remove the "table =" then Copy and paste the following code.<ol style="list-style-position: initial; list-style-image: initial; padding: 0px; margin-right: 0px; margin-left: 0px;"><li style="margin: 0.3em 0px 0px 2em;"><pre style="font-family: monaco, monospace; font-size: 0.875em; margin-bottom: 0px; padding: 1rem; background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat-x: ; background-repeat-y: ; background-attachment: ; background-origin: ; background-clip: ; border-radius: 0.4rem; overflow-wrap: normal; word-break: normal; display: inline-block; vertical-align: top; width: 497.891px;"><font color="#000000">Calendar = ADDCOLUMNS(CALENDAR(MIN('Global Internet Users'[Date]),MAX('Global Internet Users'[Date])),
+"DateAsInteger", FORMAT ( [Date], "YYYYMMDD" ),
+
+"Year", YEAR ( [Date] ),
+
+"Monthnumber", FORMAT ( [Date], "MM" ),
+"YearMonthnumber", FORMAT ( [Date], "YYYY/MM" ),
+
+"YearMonthShort", FORMAT ( [Date], "YYYY/mmm" ),
+
+"MonthNameShort", FORMAT ( [Date], "mmm" ),
+
+"MonthNameLong", FORMAT ( [Date], "mmmm" ),
+
+"DayOfWeekNumber", WEEKDAY ( [Date] ),
+
+"DayOfWeek", FORMAT ( [Date], "dddd" ),
+
+"DayOfWeekShort", FORMAT ( [Date], "ddd" ),
+
+"Quarter", "Q" &amp; FORMAT ( [Date], "Q" ),
+
+"YearQuarter", FORMAT ( [Date], "YYYY" ) &amp; "/Q" &amp; FORMAT ( [Date], "Q" ),
+
+"Decades", YEAR([Date]) - MOD(YEAR([Date]), -10))</font></pre></li></ol></li><li style="margin: 0.3em 0px 0px 2em;">Now you have the Calendar Table</li></ol><div style="margin: 0px; font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 18px;">Follow the following GIF to create the Calendar Table</div><div style="margin: 0px; font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 18px;"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1374/10/1.jpg" style="width: 50%;"><br></div>
+
+<a href="https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-add-custom-column" style="background-color: rgb(255, 255, 255); font-family: sans-serif; font-weight: 400;">Add a custom column in Power BI Desktop - Power BI | Microsoft Learn</a>
+
